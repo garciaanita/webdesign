@@ -1,0 +1,403 @@
+/* ===== MAIN CSS - RESET AND VARIABLES ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables */
+:root {
+  --primary-color: #be5d81;
+  --secondary-color: #64748b;
+  --accent-color: #cbcbcb;
+  --text-color: #1e293b;
+  --bg-color: #f8fafc;
+  --white: #ffffff;
+  --gray: #212121;
+  --accent: #d7ff5e;
+  --border-color: #e2e8f0;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Typography */
+  --font-family: "zalando sans semiexpanded", sans-serif;
+  --font-size-sm: 0.7rem;
+  --font-size-base: 0.93rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 3rem;
+  --lh-body: 1.5; /* texto corrido */
+  --lh-heading: 1.2; /* h1–h3 */
+  --track-body: -0.3em; /* tracking normal */
+  --track-heading: -0.06em; /* títulos un pelín más apretados */
+
+  /* Borders and shadows */
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--gray);
+}
+
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Typography */
+
+h1 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-heading);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+}
+h2 {
+  font-size: var(--font-size-2xl);
+  color: #f0e2e7;
+}
+h3 {
+  font-size: var(--font-size-xl);
+}
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Links & Buttons */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 600;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  transition: background-color 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+.subtitle-font {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--accent);
+}
+.mb-ana {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+.text-box {
+  background-color: var(--bg-color);
+  margin: var(--spacing-sm) 0;
+  font-size: var(--font-size-base);
+}
+
+/* ===== SPECIFIC CSS FOR RESOURCES PAGE ===== */
+/* Header */
+.resources-header {
+  background: #f0e2e7 100%;
+  color: #1f1f1f;
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+.resources-header h1 {
+  color: #1f1f1f 100%;
+  margin-bottom: var(--spacing-sm);
+}
+.resources-header p {
+  opacity: 0.9;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Navigation */
+.resources-nav {
+  background-color: var(--white);
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--spacing-xl);
+}
+.resources-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.resources-nav a {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease;
+}
+.resources-nav a:hover {
+  background-color: var(--bg-color);
+}
+
+/* Sections */
+.tools-section {
+  margin-bottom: var(--spacing-xl);
+}
+.tools-section h2 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Cards */
+.tool-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  padding-left: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.tool-card h3 {
+  margin-bottom: var(--spacing-sm);
+}
+.tool-card h3 a {
+  color: var(--text-color);
+}
+.tool-card h3 a:hover {
+  color: var(--primary-color);
+}
+
+/* Badges */
+.runtime-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+.runtime-badge.nodejs {
+  background-color: #cce98e;
+  color: #1a202c;
+}
+.runtime-badge.standalone {
+  background-color: #989898;
+  color: var(--white);
+}
+
+/* Chips (para filtros) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    background-color 0.12s ease;
+}
+
+/* Tool info */
+.tool-info {
+  margin-bottom: var(--spacing-md);
+}
+.tool-info p {
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+}
+.tool-info strong {
+  color: var(--text-color);
+}
+
+/* Personal notes */
+.personal-notes {
+  background-color: var(--bg-color);
+  border-left: 4px solid var(--accent-color);
+  padding: var(--spacing-md);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  margin-top: var(--spacing-md);
+}
+.personal-notes h4 {
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Footer */
+.resources-footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  margin-top: var(--spacing-xl);
+}
+
+/* ===== RUNTIME FILTER (CSS-ONLY) ===== */
+.runtime-filter {
+  margin: var(--spacing-md) auto var(--spacing-lg);
+}
+.runtime-filter-bar {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.runtime-filter input {
+  display: none;
+}
+
+/* Active state via :has (si está disponible) */
+@supports (selector(:has(*))) {
+  .runtime-filter:has(#filter-all:checked) label[for="filter-all"],
+  .runtime-filter:has(#filter-node:checked) label[for="filter-node"],
+  .runtime-filter:has(#filter-standalone:checked)
+    label[for="filter-standalone"] {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+}
+/* Fallback sin :has */
+#filter-all:checked ~ .runtime-filter-bar label[for="filter-all"],
+#filter-node:checked ~ .runtime-filter-bar label[for="filter-node"],
+#filter-standalone:checked
+  ~ .runtime-filter-bar
+  label[for="filter-standalone"] {
+  background: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+/* Mostrar todo por defecto */
+.filter-target .tool-card {
+  display: block;
+}
+
+/* Node only */
+#filter-node:checked ~ .filter-target .tool-card {
+  display: none;
+}
+#filter-node:checked ~ .filter-target .tool-card.runtime-node {
+  display: block;
+}
+
+/* Standalone only */
+#filter-standalone:checked ~ .filter-target .tool-card {
+  display: none;
+}
+#filter-standalone:checked ~ .filter-target .tool-card.runtime-standalone {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resources-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  .tool-card {
+    padding: var(--spacing-md);
+  }
+}

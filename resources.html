@@ -2,147 +2,488 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Web Design Resources — Your Name</title>
-    <link rel="stylesheet" href="assets/site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Design Resources — Ana García P.</title>
+    <!-- ajusta la ruta según tu estructura -->
+    <link rel="stylesheet" href="./assets/css/resources.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Cambia familias según quieras -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1>Web Design Resources</h1>
-      <p>Student: Your Name · Course: Advanced Web Design</p>
-      <nav>
-        <a href="#frameworks">Frameworks</a>
-        ·
-        <a href="#animations">Animations</a>
-        ·
-        <a href="#templates">Templates</a>
-        ·
-        <a href="#notes">Personal Notes</a>
-      </nav>
+    <!-- ===== Header ===== -->
+    <header class="resources-header" role="banner">
+      <div class="container">
+        <h1>
+          Report on Classic & <br />
+          Modern Web Design Tools
+        </h1>
+        <p class="subtitle-font">
+          8 tools | 4 categories | runtime classification
+        </p>
+        <p class="mb-ana">
+          <strong> @GARCIAAANITA </strong> · Web Design Resources
+        </p>
+        <a href="#reflection" class="btn">Skip to Reflection</a>
+      </div>
     </header>
 
-    <main>
-      <section id="frameworks">
-        <h2>CSS Frameworks</h2>
+    <!-- ===== Navigation ===== -->
+    <nav class="resources-nav" aria-label="Sections">
+      <div class="container">
+        <ul>
+          <li><a href="#css">Stylesheet & CSS Frameworks</a></li>
+          <li><a href="#ui">UI Kits & Component Libraries</a></li>
+          <li><a href="#animation">Animation & Visual</a></li>
+          <li><a href="#templates">Templates & Open UI</a></li>
+          <li><a href="#reflection">Critical Reflection</a></li>
+        </ul>
+      </div>
+    </nav>
 
-        <article>
-          <h3><a href="https://getbootstrap.com/">Bootstrap</a></h3>
-          <figure>
-            <img
-              src="assets/img/bootstrap-demo.png"
-              alt="Bootstrap demo"
-              width="640"
-              height="360"
-            />
-            <figcaption>My screenshot of Bootstrap components</figcaption>
-          </figure>
-          <p>
-            <strong>Notes:</strong>
-            Quick prototyping with prebuilt components. Consider customizing
-            theme to avoid “generic” look.
-          </p>
-          <iframe
-            src="https://getbootstrap.com/"
-            width="600"
-            height="400"
-            loading="lazy"
-          ></iframe>
-        </article>
+    <!-- wrapper requerido por el filtro CSS -->
+    <div class="filter-target">
+      <main id="content" class="container">
+        <!-- ===== 1) Stylesheet & CSS Frameworks ===== -->
+        <section id="css" class="tools-section" aria-labelledby="css-title">
+          <header>
+            <h2 id="css-title">Stylesheet & CSS Frameworks</h2>
+            <p class="mb-md">Bootstrap • TailwindCSS • Bulma</p>
+          </header>
 
-        <article>
-          <h3><a href="https://tailwindcss.com/">TailwindCSS</a></h3>
-          <figure>
-            <img
-              src="assets/img/tailwind-demo.png"
-              alt="Tailwind demo"
-              width="640"
-              height="360"
-            />
-            <figcaption>Utility-first classes — my experiment</figcaption>
-          </figure>
-          <p>
-            <strong>Notes:</strong>
-            Fast to iterate; watch class bloat. Extract components for
-            readability.
-          </p>
-          <iframe
-            src="https://tailwindcss.com/"
-            width="600"
-            height="400"
-            loading="lazy"
-          ></iframe>
-        </article>
-      </section>
+          <div class="tools-grid" role="list">
+            <!-- Bootstrap -->
+            <article class="tool-card runtime-standalone" role="listitem">
+              <header>
+                <span
+                  class="runtime-badge standalone"
+                  title="Does not require Node.js"
+                  >No Node.js</span
+                >
+                <h3>
+                  <a
+                    href="https://getbootstrap.com"
+                    target="_blank"
+                    rel="noopener"
+                    >Bootstrap</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> framework CSS/JS con grid, utilidades
+                  y componentes.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>maduro, docs y comunidad grandes</li>
+                  <li>grid + utilidades listas</li>
+                  <li>CDN, sin build</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>look opinado/reconocible</li>
+                  <li>sobreescrituras verbosas</li>
+                  <li>plugins con Popper</li>
+                </ul>
+              </div>
+              <aside class="personal-notes" aria-label="Personal notes">
+                <h4>Notas personales</h4>
+                <p>Prototipos express y handoff con equipos no técnicos.</p>
+              </aside>
+            </article>
 
-      <section id="animations">
-        <h2>Animation Libraries</h2>
+            <!-- Tailwind CSS -->
+            <article class="tool-card runtime-node" role="listitem">
+              <header>
+                <span class="runtime-badge nodejs" title="Requires Node.js"
+                  >Node.js</span
+                >
+                <h3>
+                  <a
+                    href="https://tailwindcss.com"
+                    target="_blank"
+                    rel="noopener"
+                    >Tailwind CSS</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> utility-first CSS con purge/treeshake
+                  en build.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>veloz en HTML; diseño consistente</li>
+                  <li>CSS final pequeño</li>
+                  <li>config = design tokens</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>requiere Node + PostCSS</li>
+                  <li>HTML con muchas clases</li>
+                  <li>cambio de mentalidad (utilities)</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>Stack favorito en React/Next por control y escalabilidad.</p>
+              </aside>
+            </article>
 
-        <article>
-          <h3><a href="https://greensock.com/gsap/">GSAP</a></h3>
-          <figure>
-            <img
-              src="assets/img/gsap-demo.png"
-              alt="GSAP demo"
-              width="640"
-              height="360"
-            />
-            <figcaption>Timeline and scroll experiments</figcaption>
-          </figure>
-          <p>
-            <strong>Notes:</strong>
-            Powerful for storytelling; mind performance and reduced motion
-            preferences.
-          </p>
-          <iframe
-            src="https://greensock.com/gsap/"
-            width="600"
-            height="400"
-            loading="lazy"
-          ></iframe>
-        </article>
-      </section>
+            <!-- Bulma -->
+            <article class="tool-card runtime-standalone" role="listitem">
+              <header>
+                <span
+                  class="runtime-badge standalone"
+                  title="Does not require Node.js"
+                  >No Node.js</span
+                >
+                <h3>
+                  <a href="https://bulma.io" target="_blank" rel="noopener"
+                    >Bulma</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> framework CSS puro basado en Flexbox.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>ligero; sin JS</li>
+                  <li>estética limpia</li>
+                  <li>CDN directo</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>menos componentes JS listos</li>
+                  <li>ecosistema menor</li>
+                  <li>custom profundo vía Sass</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>Ideal cuando quiero simpleza y cero dependencias JS.</p>
+              </aside>
+            </article>
+          </div>
+        </section>
 
-      <section id="templates">
-        <h2>Templates & UI Kits</h2>
+        <!-- ===== 2) UI Kits & Component Libraries ===== -->
+        <section id="ui" class="tools-section" aria-labelledby="ui-title">
+          <header>
+            <h2 id="ui-title">UI Kits & Component Libraries</h2>
+            <p class="mb-md">shadcn/ui • Ark UI</p>
+          </header>
 
-        <article>
-          <h3><a href="https://html5up.net/">HTML5 UP</a></h3>
-          <figure>
-            <img
-              src="assets/img/html5up-demo.png"
-              alt="HTML5 UP demo"
-              width="640"
-              height="360"
-            />
-            <figcaption>Template I’m considering to adapt</figcaption>
-          </figure>
-          <p>
-            <strong>Notes:</strong>
-            Good starting point; verify accessibility and semantics.
-          </p>
-          <iframe
-            src="https://html5up.net/"
-            width="600"
-            height="400"
-            loading="lazy"
-          ></iframe>
-        </article>
-      </section>
+          <div class="tools-grid" role="list">
+            <!-- shadcn/ui -->
+            <article class="tool-card runtime-node" role="listitem">
+              <header>
+                <span class="runtime-badge nodejs" title="Requires Node.js"
+                  >Node.js</span
+                >
+                <h3>
+                  <a href="https://ui.shadcn.com" target="_blank" rel="noopener"
+                    >shadcn/ui</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> componentes React copiables (Radix +
+                  Tailwind).
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>accesibles y de alta calidad</li>
+                  <li>código en tu repo (control)</li>
+                  <li>excelente con Next/Tailwind</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>Node + React obligatorios</li>
+                  <li>acoplamiento a Tailwind</li>
+                  <li>actualizaciones manuales</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>
+                  Para dashboards/portales con look actual y time-to-market
+                  corto.
+                </p>
+              </aside>
+            </article>
 
-      <section id="notes">
-        <h2>Personal Notes</h2>
-        <p>
-          Which tools fit my portfolio and why? What trade-offs did I find?
-          What’s my plan to integrate one in my project next week?
-        </p>
-      </section>
-    </main>
+            <!-- Ark UI -->
+            <article class="tool-card runtime-node" role="listitem">
+              <header>
+                <span class="runtime-badge nodejs" title="Requires Node.js"
+                  >Node.js</span
+                >
+                <h3>
+                  <a href="https://ark-ui.com" target="_blank" rel="noopener"
+                    >Ark UI</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> componentes headless accesibles
+                  (React/Vue/Solid) sobre máquinas de estado.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>libertad total de estilos</li>
+                  <li>accesibilidad sólida</li>
+                  <li>multi-framework</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>más trabajo de CSS</li>
+                  <li>requiere runtime de framework</li>
+                  <li>ecosistema más joven</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>
+                  Perfecto para construir un design system con identidad fuerte.
+                </p>
+              </aside>
+            </article>
+          </div>
+        </section>
 
-    <footer>
-      <p>
-        © 2025 — Web Atelier · All external links belong to their respective
-        owners.
-      </p>
+        <!-- ===== 3) Animation & Visual Libraries ===== -->
+        <section
+          id="animation"
+          class="tools-section"
+          aria-labelledby="anim-title"
+        >
+          <header>
+            <h2 id="anim-title">Animation & Visual Libraries</h2>
+            <p class="mb-md">GSAP • AOS</p>
+          </header>
+
+          <div class="tools-grid" role="list">
+            <!-- GSAP -->
+            <article class="tool-card runtime-standalone" role="listitem">
+              <header>
+                <span
+                  class="runtime-badge standalone"
+                  title="Does not require Node.js"
+                  >No Node.js</span
+                >
+                <h3>
+                  <a href="https://gsap.com" target="_blank" rel="noopener"
+                    >GSAP</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> motor JS de animación de alto
+                  rendimiento.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>control fino + plugins</li>
+                  <li>performance probada</li>
+                  <li>CDN o npm</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>curva (timelines/ScrollTrigger)</li>
+                  <li>plugins premium bajo licencia</li>
+                  <li>más peso que CSS puro</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>Para microinteracciones premium y storytelling.</p>
+              </aside>
+            </article>
+
+            <!-- AOS -->
+            <article class="tool-card runtime-standalone" role="listitem">
+              <header>
+                <span
+                  class="runtime-badge standalone"
+                  title="Does not require Node.js"
+                  >No Node.js</span
+                >
+                <h3>
+                  <a
+                    href="https://michalsnik.github.io/aos/"
+                    target="_blank"
+                    rel="noopener"
+                    >AOS (Animate On Scroll)</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> animaciones on-scroll por
+                  data-attributes.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>setup mínimo (CDN)</li>
+                  <li>ligero</li>
+                  <li>sin build</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>efectos limitados</li>
+                  <li>poco control en escenas complejas</li>
+                  <li>timelines largos difíciles</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>
+                  Para landings de marketing donde “algo de movimiento” basta.
+                </p>
+              </aside>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== 4) Templates & Open UI ===== -->
+        <section
+          id="templates"
+          class="tools-section"
+          aria-labelledby="tpl-title"
+        >
+          <header>
+            <h2 id="tpl-title">Templates & Open UI</h2>
+            <p class="mb-md">HTML5 UP</p>
+          </header>
+
+          <div class="tools-grid" role="list">
+            <!-- HTML5 UP -->
+            <article class="tool-card runtime-standalone" role="listitem">
+              <header>
+                <span
+                  class="runtime-badge standalone"
+                  title="Does not require Node.js"
+                  >No Node.js</span
+                >
+                <h3>
+                  <a href="https://html5up.net" target="_blank" rel="noopener"
+                    >HTML5 UP</a
+                  >
+                </h3>
+              </header>
+              <div class="tool-info">
+                <p class="text-box">
+                  <strong>Qué es:</strong> plantillas HTML/CSS gratuitas y
+                  responsive.
+                </p>
+                <p class="text-box"><strong>Ventajas:</strong></p>
+                <ul>
+                  <li>diseños listos</li>
+                  <li>sin build ni dependencias</li>
+                  <li>ideal para estáticos</li>
+                </ul>
+                <p class="text-box"><strong>Desventajas:</strong></p>
+                <ul>
+                  <li>atribuCIÓN/licencia según tema</li>
+                  <li>código menos componentizado</li>
+                  <li>custom profundo lleva tiempo</li>
+                </ul>
+              </div>
+              <aside class="personal-notes">
+                <h4>Notas personales</h4>
+                <p>Kickoff rápido de portfolio.</p>
+              </aside>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== Critical Reflection ===== -->
+        <section
+          id="reflection"
+          class="tools-section"
+          aria-labelledby="reflection-title"
+        >
+          <header>
+            <h2 id="reflection-title">Critical Reflection</h2>
+            <p class="mb-md">Which tools fit my workflow & key trade-offs</p>
+          </header>
+
+          <article class="tool-card">
+            <h3>Which tools fit your workflow?</h3>
+            <p>
+              Para productos y dashboards me quedo con Tailwind y shadcn/ui ya
+              que son de maquetación muy rápida, diseño consistente por
+              configuración y escalado limpio en equipos. Para dar “cara de
+              estudio” a mis piezas y elevar la percepción, usaría GSAP en
+              microinteracciones y storytelling (scroll, timelines, SVG), que
+              aporta control fino y suavidad. Si necesitara entregar sin
+              pipeline de build, Bootstrap o Bulma me permitirían salir con CDN
+              y una base estable, ideal en prototipos docentes o sites
+              corporativos sencillos. Para landings que solo requieren un toque
+              de movimiento, AOS resuelve con casi cero complejidad. Y si
+              necesito un punto de partida en horas, HTML5 UP me da un MVP
+              estático que luego refactorizo a componentes.
+            </p>
+
+            <h3 class="mt-md">Trade-offs observed</h3>
+            <p>
+              En velocidad vs flexibilidad, AOS y HTML5 UP maximizan el
+              time-to-first-deliverable pero limitan el tema de personalización.
+              GSAP y Tailwind exigen algo más de setup a cambio de control
+              total. En dependencias vs simplicidad, shadcn y Ark incrementan
+              productividad en stacks modernos (Node y framework), mientras
+              Bulma/Bootstrap simplifican al prescindir de build, a costa de
+              menos “a medida”. En Node.js vs standalone, Tailwind/shadcn/Ark
+              brillan en productos escalables con pipeline;
+              GSAP/AOS/Bootstrap/Bulma/HTML5 UP funcionan directo por CDN,
+              perfectos para estáticos rápidos. En creatividad vs convención,
+              GSAP/Tailwind favorecen identidad visual propia; Bootstrap
+              prioriza consistencia y patrones reconocibles.
+            </p>
+
+            <h3 class="mt-md">
+              How would you use these tools in your portfolio?
+            </h3>
+            <p>
+              Los case studies los construiría con Next, Tailwind y shadcn/ui
+              para una UI coherente, accesible y mantenible (dark/light
+              incluidos). Reservo GSAP para héroes, transiciones y
+              microinteracciones que demuestren criterio de motion y
+              storytelling. Para explicar conceptos o clases, Bulma/Bootstrap me
+              permiten prototipar sin fricción y centrarme en el contenido. En
+              campañas con plazos cortos, AOS aporta animación discreta y
+              efectiva. Cuando el objetivo es validar rápido, parto de HTML5 UP,
+              entrego el MVP y, si escala, migro a una arquitectura por
+              componentes con Tailwind.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+    <!-- /.filter-target -->
+
+    <!-- ===== Footer ===== -->
+    <footer class="resources-footer" role="contentinfo">
+      <div class="container">
+        <h1>Gracias :)</h1>
+      </div>
     </footer>
   </body>
 </html>
